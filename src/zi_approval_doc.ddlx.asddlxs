@@ -1,0 +1,55 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+  typeName: 'Approval Document',
+  typeNamePlural: 'Approval Documents'
+}
+annotate view ZI_APPROVAL_DOC with
+{
+  @UI.facet: [{
+    id: 'BasicInfo',
+    type: #FIELDGROUP_REFERENCE,
+    targetQualifier: 'BasicInfo',
+    label: 'Basic Information'
+  }]
+
+
+  @UI.lineItem: [{ position: 10 }]
+  @UI.selectionField: [{ position: 10 }]
+  @UI.fieldGroup: [{ position: 10, qualifier: 'BasicInfo' }]
+  @UI.identification: [
+    { position: 10, type: #FOR_ACTION, dataAction: 'approve', label: '승인' },
+    { position: 20, type: #FOR_ACTION, dataAction: 'reject',  label: '반려' }
+  ]
+  
+  DocId;
+
+  @UI.lineItem: [{ position: 20 }]
+  @UI.fieldGroup: [{ position: 20, qualifier: 'BasicInfo' }]
+  Title;
+
+    @UI.textArrangement: #TEXT_ONLY
+    @UI.lineItem: [{ position: 30 }]
+    @UI.fieldGroup: [{ position: 30, qualifier: 'BasicInfo' }]
+    Status;
+
+  @UI.lineItem: [{ position: 40 }]
+  @UI.fieldGroup: [{ position: 40, qualifier: 'BasicInfo' }]
+  Requester;
+
+  @UI.lineItem: [{ position: 50 }]
+  @UI.fieldGroup: [{ position: 50, qualifier: 'BasicInfo' }]
+  CreatedAt;
+
+  @UI.lineItem: [{ position: 60 }]
+  @UI.fieldGroup: [{ position: 60, qualifier: 'BasicInfo' }]
+  Content;
+
+  @UI.lineItem: [{ position: 70 }]
+  @UI.fieldGroup: [{ position: 70, qualifier: 'BasicInfo' }]
+  ApprovedBy;
+
+  @UI.lineItem: [{ position: 80 }]
+  @UI.fieldGroup: [{ position: 80, qualifier: 'BasicInfo' }]
+  ApprovedAt;
+  
+}

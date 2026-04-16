@@ -1,0 +1,4 @@
+@EndUserText.label: 'Approval Service'
+define service ZAPPROVAL_SRV {
+  expose ZI_APPROVAL_DOC as ApprovalDoc;
+}

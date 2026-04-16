@@ -1,0 +1,30 @@
+managed implementation in class zbp_i_approval_doc unique;
+
+define behavior for ZI_APPROVAL_DOC alias ApprovalDoc
+persistent table zapproval_doc
+lock master
+authorization master ( instance )
+{
+  create;
+  update;
+  delete;
+
+  action approve result [1] $self;
+  action reject  result [1] $self;
+
+  determination set_defaults on modify { create; }
+
+  field ( readonly : update ) DocId;
+
+  mapping for zapproval_doc
+  {
+    DocId      = doc_id;
+    Title      = title;
+    Content    = content;
+    Requester  = requester;
+    Status     = status;
+    CreatedAt  = created_at;
+    ApprovedBy = approved_by;
+    ApprovedAt = approved_at;
+  }
+}

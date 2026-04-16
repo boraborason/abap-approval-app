@@ -1,0 +1,5 @@
+CLASS zbp_i_approval_doc DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_approval_doc.
+ENDCLASS.
+
+CLASS zbp_i_approval_doc IMPLEMENTATION.
+ENDCLASS.
